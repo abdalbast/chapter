@@ -14,7 +14,11 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "check:links": "node scripts/check-links.mjs",
-    "dev:php": "php -S 127.0.0.1:8000 -t HTML_TEMPLATE"
+    "dev:php": "php -S 127.0.0.1:8000 -t HTML_TEMPLATE",
+    "check:seo": "node scripts/check-seo.mjs",
+    "check:a11y": "node scripts/check-a11y.mjs",
+    "check:theme": "node scripts/check-theme-assets.mjs",
+    "check:all": "npm-run-all -c check:*"
   },
   "devDependencies": {
     "eslint": "^9.9.0",
