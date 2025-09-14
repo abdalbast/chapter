@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Marko - Digital Marketing Agency</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./css/style.css" as="style" />
+    <link rel="preload" href="./js/vendor/jquery.min.js" as="script" />
+    <link rel="preload" href="./image/marko-logo.png" as="image" />
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./image/favicon.ico" />
   </head>
@@ -1138,12 +1148,15 @@
       <div id="footer"></div>
     </footer>
 
+    <!-- Critical scripts loaded synchronously -->
     <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="js/vendor/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/swiper-script.js"></script>
-    <script src="js/submit-form.js"></script>
-    <script src="js/video_embedded.js"></script>
+
+    <!-- Non-critical scripts loaded asynchronously -->
+    <script src="js/vendor/bootstrap.bundle.min.js" async></script>
+    <script src="js/vendor/swiper-bundle.min.js" async></script>
+    <script src="js/swiper-script.js" defer></script>
+    <script src="js/submit-form.js" defer></script>
+    <script src="js/video_embedded.js" defer></script>
   </body>
 </html>

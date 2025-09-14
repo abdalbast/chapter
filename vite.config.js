@@ -9,6 +9,10 @@ export default defineConfig({
   build: {
     outDir: "../dist",
     emptyOutDir: true,
+    // Optimise build performance
+    minify: "terser",
+    cssMinify: true,
+    sourcemap: false,
     rollupOptions: {
       input: {
         main: "HTML_TEMPLATE/index.html",
@@ -27,6 +31,20 @@ export default defineConfig({
         testimonial: "HTML_TEMPLATE/testimonial.html",
         page404: "HTML_TEMPLATE/404_page.html",
       },
+      output: {
+        // Manual chunking for better caching
+        manualChunks: {
+          vendor: ["jquery"],
+          bootstrap: ["bootstrap"],
+          swiper: ["swiper"],
+        },
+        // Optimise asset naming for caching
+        chunkFileNames: "assets/js/[name]-[hash].js",
+        entryFileNames: "assets/js/[name]-[hash].js",
+        assetFileNames: "assets/[ext]/[name]-[hash].[ext]",
+      },
     },
+    // Optimise chunk size warnings
+    chunkSizeWarningLimit: 1000,
   },
 });

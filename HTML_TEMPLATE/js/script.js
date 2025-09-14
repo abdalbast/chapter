@@ -28,9 +28,34 @@ Promise.all([
 
 function initBannerVideo() {
   var player;
+  var apiLoaded = false;
 
-  var $tag = $("<script>", { src: "https://www.youtube.com/iframe_api" });
-  $("script").first().before($tag);
+  // Lazy load YouTube API only when video container is in viewport
+  function loadYouTubeAPI() {
+    if (apiLoaded) return;
+    apiLoaded = true;
+
+    var $tag = $("<script>", { src: "https://www.youtube.com/iframe_api" });
+    $("script").first().before($tag);
+  }
+
+  // Check if video container exists and is in viewport
+  var $videoContainer = $(".banner-video-container");
+  if ($videoContainer.length > 0) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            loadYouTubeAPI();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "100px" },
+    );
+
+    observer.observe($videoContainer[0]);
+  }
 
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player("banner-video-background", {

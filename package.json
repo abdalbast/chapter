@@ -19,7 +19,11 @@
     "check:a11y": "node scripts/check-a11y.mjs",
     "check:theme": "node scripts/check-theme-assets.mjs",
     "check:all": "npm-run-all -c check:*",
-    "images:optimize": "node --env-file=.env scripts/optimize-images.mjs"
+    "images:optimize": "node --env-file=.env scripts/optimize-images.mjs",
+    "performance:optimize": "node scripts/performance-optimize.mjs",
+    "build:prod": "vite build --mode production",
+    "build:optimized": "npm run performance:optimize && npm run build:prod",
+    "analyze:bundle": "vite build --mode production && npx vite-bundle-analyzer dist"
   },
   "devDependencies": {
     "eslint": "^9.9.0",
