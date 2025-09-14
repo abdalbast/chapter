@@ -19,9 +19,20 @@ const problems = [];
 for (const f of files) {
   const html = readFileSync(f, 'utf8');
   if (html.includes('themeswitch') || html.includes('themeSwitch')) {
-    const hasDark = /-dark\.(png|jpg|jpeg|webp|svg)/i.test(html);
-    const hasLight = /-light\.(png|jpg|jpeg|webp|svg)/i.test(html);
-    if (!hasDark || !hasLight) problems.push({ file: f, issue: 'missing dark/light asset variants (heuristic)' });
+    const refs = [...html.matchAll(/src=\"([^\"]+)\"/g)].map(m => m[1]).filter(p => !/^https?:/.test(p));
+    const path = (await import('node:path')).default;
+    const fs = await import('node:fs');
+    for (const r of refs) {
+      const dark = r.replace(/(\.[a-z]+)$/i, '-dark$1');
+      const light = r.replace(/(\.[a-z]+)$/i, '-light$1');
+      const baseDir = path.dirname(f);
+      const darkPath = path.resolve(baseDir, dark);
+      const lightPath = path.resolve(baseDir, light);
+      const darkExists = fs.existsSync(darkPath);
+      const lightExists = fs.existsSync(lightPath);
+      if (!darkExists && !lightExists) continue;
+      if (!darkExists || !lightExists) problems.push({ file: f, issue: `missing variant for ${r} (needs both -dark and -light)` });
+    }
   }
 }
 

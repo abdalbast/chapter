@@ -18,7 +18,7 @@ const rules = [
   { name: 'img-alt', re: /<img\b[^>]*\balt=\s*"[^"]*"/i, selector: /<img\b/i },
   { name: 'lang-attr', re: /<html\b[^>]*\blang=\s*"[^"]+"/i, selector: /<html\b/i },
   { name: 'viewport', re: /<meta[^>]+name=\s*"viewport"/i, selector: /<head[\s\S]*?<\/head>/i },
-  { name: 'title', re: /<title>[\s\S]*?<\/title>/i, selector: /<head[\s\S]*?<\/head>/i },
+  { name: 'title', re: /<title\b[^>]*>[\s\S]*?<\/title>/i, selector: /<head[\s\S]*?<\/head>/i },
   { name: 'label-for', re: /<label\b[^>]*\bfor=\s*"[^"]+"/i, selector: /<label\b/i }
 ];
 
