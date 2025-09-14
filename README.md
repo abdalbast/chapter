@@ -18,7 +18,7 @@ A static website template for a digital agency, prepared for development in Curs
 ## Project Structure
 
 - `HTML_TEMPLATE/` – Active source for pages, assets, CSS, JS, PHP (forms)
-- `DOCUMENTATION/` – Separate documentation/demo assets (kept intact, not edited)
+- `DOCUMENTATION/` – Documentation/demo assets only; do not modify for production.
 
 Follow `structure.md` for conventions and non‑negotiable rules.
 
