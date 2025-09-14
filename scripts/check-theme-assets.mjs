@@ -16,22 +16,36 @@ function walk(dir) {
 
 const files = walk(ROOT).filter(f => f.endsWith('.html'));
 const problems = [];
+const path = (await import('node:path')).default;
+const fs = await import('node:fs');
 for (const f of files) {
   const html = readFileSync(f, 'utf8');
-  if (html.includes('themeswitch') || html.includes('themeSwitch')) {
-    const refs = [...html.matchAll(/src=\"([^\"]+)\"/g)].map(m => m[1]).filter(p => !/^https?:/.test(p));
-    const path = (await import('node:path')).default;
-    const fs = await import('node:fs');
-    for (const r of refs) {
-      const dark = r.replace(/(\.[a-z]+)$/i, '-dark$1');
-      const light = r.replace(/(\.[a-z]+)$/i, '-light$1');
+  if (!(html.includes('themeswitch') || html.includes('themeSwitch'))) continue;
+
+  // Check site-logo: should have a -dark variant available
+  const siteLogoMatch = html.match(/<img[^>]*class=\"[^\"]*site-logo[^\"]*\"[^>]*src=\"([^\"]+)\"/i);
+  if (siteLogoMatch) {
+    const src = siteLogoMatch[1];
+    if (!/^https?:/.test(src)) {
+      const dark = src.replace(/(\.[a-z]+)$/i, '-dark$1');
       const baseDir = path.dirname(f);
       const darkPath = path.resolve(baseDir, dark);
-      const lightPath = path.resolve(baseDir, light);
-      const darkExists = fs.existsSync(darkPath);
-      const lightExists = fs.existsSync(lightPath);
-      if (!darkExists && !lightExists) continue;
-      if (!darkExists || !lightExists) problems.push({ file: f, issue: `missing variant for ${r} (needs both -dark and -light)` });
+      if (!fs.existsSync(darkPath)) {
+        problems.push({ file: f, issue: `missing dark variant for ${src}` });
+      }
+    }
+  }
+
+  // Check partner logos: each png should have a -dark variant
+  const partnerSrcs = [...html.matchAll(/<img[^>]*class=\"[^\"]*partner-logo[^\"]*\"[^>]*src=\"([^\"]+\.png)\"/ig)]
+    .map(m => m[1])
+    .filter(src => !/^https?:/.test(src));
+  for (const src of partnerSrcs) {
+    const dark = src.replace(/(\.[a-z]+)$/i, '-dark$1');
+    const baseDir = path.dirname(f);
+    const darkPath = path.resolve(baseDir, dark);
+    if (!fs.existsSync(darkPath)) {
+      problems.push({ file: f, issue: `missing dark variant for ${src}` });
     }
   }
 }
