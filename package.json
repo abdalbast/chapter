@@ -12,7 +12,9 @@
     "lint:html": "htmlhint \"HTML_TEMPLATE/**/*.html\" --ignore HTML_TEMPLATE/vendor/**/*.html",
     "lint": "npm-run-all -c lint:*",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "check:links": "node scripts/check-links.mjs",
+    "dev:php": "php -S 127.0.0.1:8000 -t HTML_TEMPLATE"
   },
   "devDependencies": {
     "eslint": "^9.9.0",
