@@ -38,7 +38,7 @@ Follow `structure.md` for conventions and non‑negotiable rules.
 
 ## Deployment
 
-This is a static site. If using the PHP forms, deploy to a PHP‑capable host. See `php/` handlers and `structure.md` for details.
+This is a static site. If using the PHP forms, deploy to a PHP‑capable host. Use `npm run dev:php` for local testing. Ensure `form_process.php` and `newsletter_process.php` are accessible under `HTML_TEMPLATE/php/` on production.
 
 ## Licence
 
