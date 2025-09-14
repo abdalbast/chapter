@@ -10,7 +10,7 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
     // Optimise build performance
-    minify: "terser",
+    minify: true,
     cssMinify: true,
     sourcemap: false,
     rollupOptions: {
@@ -32,12 +32,6 @@ export default defineConfig({
         page404: "HTML_TEMPLATE/404_page.html",
       },
       output: {
-        // Manual chunking for better caching
-        manualChunks: {
-          vendor: ["jquery"],
-          bootstrap: ["bootstrap"],
-          swiper: ["swiper"],
-        },
         // Optimise asset naming for caching
         chunkFileNames: "assets/js/[name]-[hash].js",
         entryFileNames: "assets/js/[name]-[hash].js",

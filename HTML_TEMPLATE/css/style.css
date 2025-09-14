@@ -99,10 +99,7 @@
 
 @import url("../css/vendor/font-family-plus-jakarta-sans.css");
 @import url("../css/vendor/bootstrap.min.css");
-@import url("../css/vendor/fontawesome.css");
-@import url("../css/vendor/brands.css");
-@import url("../css/vendor/regular.css");
-@import url("../css/vendor/solid.css");
+@import url("../css/vendor/fontawesome.min.css");
 @import url("../css/vendor/swiper-bundle.min.css");
 @import url("../css/vendor/animate.min.css");
 
