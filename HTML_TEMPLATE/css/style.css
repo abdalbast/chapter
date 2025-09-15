@@ -1783,6 +1783,21 @@ body.lightmode .navbar-icon-wrapper {
   width: clamp(140px, 8vw, 180px) !important;
   height: auto !important;
   max-width: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.navbar-brand {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand:hover .site-logo {
+  filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
 .logo-container-footer {
