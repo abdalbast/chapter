@@ -736,6 +736,7 @@ body.lightmode .form select {
   color: var(--primary);
   background-color: transparent;
   padding: 8px 16px 8px 16px !important;
+  white-space: nowrap;
 }
 
 .navbar-nav {
