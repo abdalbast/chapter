@@ -67,6 +67,15 @@ These conventions are binding. Do not change the folder structure without updati
 - `.logo-reveal`: Animation class for entrance effect
 - `.nav-btn`: Always visible (`display: inline-flex`) with transition effects
 
+### Tab Visual Styling
+- **CTA alignment**: Navbar tabs use the same visual treatment as the primary CTA (pill shape, filled background, smooth transitions), but **without** the arrow icon.
+- **Rounded pill**: Tabs are `border-radius: 100px` with padding `12px 22px` to prevent vertical clipping.
+- **Colours and effects**: Background uses `var(--accent-color-4)`, text uses `var(--primary)`. Default shadow `var(--box-shadow-top-left)`; on hover/active, shadow switches to `var(--box-shadow-bottom-right)` and text colour changes to the accent colour.
+- **Light mode**: Add `border: 1px solid var(--accent-color)` to maintain contrast.
+- **Layout and overflow**: `.navbar` and `.navbar-nav` must have `overflow: visible` to avoid clipping the glow. Keep `white-space: nowrap` on `.nav-link`.
+- **Spacing**: Tabs are spaced using a list `gap: 8px` (or `margin-left: 8px` between items) to avoid crescent cut‑outs where shadows meet.
+- **Accessibility**: Focus and hover states must remain visible and meet contrast requirements; do not remove focus outlines for keyboard users.
+
 ### JavaScript Functions
 - `initNavOverflow()`: Dynamic overflow detection and item hiding
 - `initNavbarToggle()`: Handles hamburger state, outside clicks, and Escape key
