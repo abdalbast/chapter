@@ -1778,7 +1778,7 @@ body.lightmode .navbar-icon-wrapper {
 
 .site-logo,
 .logo-container img {
-  width: clamp(100px, 7vw, 140px) !important;
+  width: clamp(120px, 8vw, 160px) !important;
   height: auto !important;
   max-width: none !important;
 }
