@@ -686,6 +686,16 @@ body.lightmode .form select {
   width: 100%;
 }
 
+/* Match right padding of controls with left logo padding */
+.nav-controls {
+  margin-right: 0;
+}
+@media (min-width: 1200px) {
+  .nav-controls {
+    padding-right: 30px;
+  }
+}
+
 .nav-btn {
   display: none;
   padding: 8px 16px;
