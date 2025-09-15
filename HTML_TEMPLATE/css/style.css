@@ -692,6 +692,7 @@ body.lightmode .form select {
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  width: 30%;
 }
 @media (min-width: 1200px) {
   .nav-controls {
@@ -744,11 +745,15 @@ body.lightmode .form select {
   flex-wrap: nowrap;
   justify-content: center;
   overflow: hidden;
+  flex: 1;
+  margin: 0 auto;
 }
 
 .navbar-collapse {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex: 1;
+  position: relative;
 }
 
 .nav-link:hover,
@@ -5000,6 +5005,9 @@ body.lightmode .cta-service-banner::before {
   .logo-container {
     width: 50%;
   }
+  .nav-controls {
+    width: 50%;
+  }
   .service-recent {
     width: 50%;
   }
@@ -5501,6 +5509,9 @@ body.lightmode .cta-service-banner::before {
   }
   .logo-container {
     width: 100%;
+  }
+  .nav-controls {
+    width: auto;
   }
   .heading-container {
     max-width: 100%;
