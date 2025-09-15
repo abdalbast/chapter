@@ -689,19 +689,19 @@ body.lightmode .form select {
 /* Match right padding of controls with left logo padding */
 .nav-controls {
   margin-right: 0;
-  gap: 0 !important; /* remove bootstrap gap utility effect */
 }
 @media (min-width: 1200px) {
   .nav-controls {
-    padding-right: 30px; /* exactly 30px to the container edge */
+    padding-right: 30px;
+  }
+  .logo-container {
+    padding-left: 30px;
   }
 }
 
 .nav-btn {
   display: none;
-  padding: 0; /* remove intrinsic padding */
-  width: 45px; /* match theme switch height for alignment */
-  height: 45px;
+  padding: 8px 16px;
   background-color: transparent;
   color: var(--primary);
   box-shadow: none;
@@ -1149,8 +1149,7 @@ body.lightmode .keep-dark .btn-accent {
 
 .themeswitch {
   height: 45px;
-  width: auto; /* allow natural width */
-  min-width: 45px; /* preserve tap target */
+  width: 45px;
   padding: 0;
   border-radius: 50%;
   background-color: var(--accent-color-4);
@@ -1689,10 +1688,10 @@ body.lightmode .title-heading {
 .navbar-action-button {
   display: flex;
   flex-direction: row;
-  gap: 0; /* remove action button gap */
+  gap: 20px 20px;
   align-items: center;
   justify-content: flex-end;
-  padding: 0; /* no extra padding; right spacing controlled by .nav-controls */
+  padding: 0px 20px 0px 20px;
 }
 
 .navbar-icon-wrapper {
@@ -1770,6 +1769,7 @@ body.lightmode .navbar-icon-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 0;
 }
 
 .logo-container img {
