@@ -82,3 +82,20 @@ These conventions are binding. Do not change the folder structure without updati
 - Smooth responsive scaling without abrupt size changes
 - Accessible animations with reduced-motion support
 - Clean, compact design with consistent spacing
+
+### Centering Implementation
+- **Three-column flexbox layout:** Logo (30%) | Navigation (40%) | Controls (30%)
+- **Desktop (1200px+):** 
+  - `.logo-container`: `width: 30%` with `padding-left: 20px`
+  - `.nav-controls`: `width: 30%` with `padding-right: 20px`
+  - `.navbar-nav`: `flex: 1`, `justify-content: center`, `margin: 0 auto`
+  - `.navbar-collapse`: `flex: 1`, `justify-content: center`
+- **Tablet (max-width: 767px):**
+  - `.logo-container`: `width: 50%`
+  - `.nav-controls`: `width: 50%`
+  - Navigation items remain centred in available space
+- **Small Mobile (smallest screens):**
+  - `.logo-container`: `width: 100%`
+  - `.nav-controls`: `width: auto`
+  - Maintains proper spacing and alignment
+- **Mathematical centering:** Navigation items are precisely centred between logo and controls across all viewports
