@@ -1776,15 +1776,11 @@ body.lightmode .navbar-icon-wrapper {
   padding-left: 0;
 }
 
+.site-logo,
 .logo-container img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-}
-
-.site-logo {
-  width: clamp(90px, 6vw, 110px);
-  height: auto;
+  width: clamp(90px, 6vw, 120px) !important;
+  height: auto !important;
+  max-width: none !important;
 }
 
 .logo-container-footer {
@@ -5056,10 +5052,7 @@ body.lightmode .cta-service-banner::before {
   .price-card-wrapper .price {
     font-size: var(--font-size-7xl);
   }
-  .logo-container img {
-    width: auto;
-    max-width: 100%;
-  }
+
   .logo-footer {
     max-width: 20%;
   }
@@ -5315,10 +5308,7 @@ body.lightmode .cta-service-banner::before {
   .card-expertise.card-expertise-counter {
     width: 100%;
   }
-  .logo-container img {
-    width: auto;
-    max-width: 100%;
-  }
+
   .logo-footer {
     max-width: 50%;
   }
