@@ -27,6 +27,38 @@ Promise.all([
     initAnimateData();
   });
 
+function initNavbarToggle() {
+  const $toggler = $(".navbar-toggler");
+  const $icon = $(".navbar-toggler i");
+  const $collapse = $("#navbarNav");
+
+  function setIcon(expanded) {
+    if (expanded) {
+      $icon.removeClass("fa-bars").addClass("fa-times");
+    } else {
+      $icon.removeClass("fa-times").addClass("fa-bars");
+    }
+  }
+
+  // initial
+  setIcon($collapse.hasClass("show"));
+
+  $toggler.on("click", function () {
+    const expanded = $(this).attr("aria-expanded") === "true";
+    setIcon(!expanded);
+    $(this).toggleClass("active", !expanded);
+  });
+
+  $collapse.on("hidden.bs.collapse", function () {
+    setIcon(false);
+    $toggler.removeClass("active");
+  });
+  $collapse.on("shown.bs.collapse", function () {
+    setIcon(true);
+    $toggler.addClass("active");
+  });
+}
+
 function initBannerVideo() {
   var player;
   var apiLoaded = false;
@@ -343,19 +375,6 @@ function initSidebar() {
     setTimeout(() => {
       $overlay.removeClass("active");
     }, 200);
-  });
-}
-
-function initNavbarToggle() {
-  const $navbarToggler = $(".navbar-toggler");
-
-  $navbarToggler.on("click", function () {
-    $(this).toggleClass("active");
-  });
-
-  // Remove active class when collapse is hidden
-  $(".navbar-collapse").on("hidden.bs.collapse", function () {
-    $navbarToggler.removeClass("active");
   });
 }
 
