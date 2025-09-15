@@ -3776,6 +3776,16 @@ body.lightmode .newsletter-layout {
   color: var(--primary);
 }
 
+/* Primary CTA variant: filled arrow circle */
+.btn.btn-accent .icon-circle {
+  background-color: var(--accent-color);
+  color: var(--primary);
+  border: none;
+}
+.btn.btn-accent:hover .icon-circle {
+  transform: translateX(2px);
+}
+
 /* 41.2 Stars */
 
 .stars {

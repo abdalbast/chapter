@@ -49,13 +49,20 @@ function initNavbarToggle() {
     $(this).toggleClass("active", !expanded);
   });
 
-  $collapse.on("hidden.bs.collapse", function () {
+  // Ensure icon resets reliably on hide, breakpoint change and route load
+  $(document).on("hidden.bs.collapse", "#navbarNav", function () {
     setIcon(false);
     $toggler.removeClass("active");
   });
-  $collapse.on("shown.bs.collapse", function () {
+  $(document).on("shown.bs.collapse", "#navbarNav", function () {
     setIcon(true);
     $toggler.addClass("active");
+  });
+
+  $(window).on("resize", function () {
+    const isShown = $collapse.hasClass("show");
+    setIcon(isShown);
+    $toggler.toggleClass("active", isShown);
   });
 }
 

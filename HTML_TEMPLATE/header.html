@@ -11,18 +11,25 @@
           />
         </a>
       </div>
-      <button
-        class="navbar-toggler nav-btn"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="d-flex align-items-center gap-2 order-1 order-xl-2">
+        <button
+          class="navbar-toggler nav-btn"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="navbar-action-button">
+          <button id="themeSwitch" class="themeswitch" aria-label="Toggle Theme">
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse order-2 order-xl-1" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="index.html">Home</a>
@@ -88,7 +95,7 @@
           </li>
         </ul>
       </div>
-      <div class="navbar-action-container">
+      <div class="navbar-action-container order-1 order-xl-2 d-flex align-items-center gap-2">
         <div class="navbar-action-button">
           <button id="themeSwitch" class="themeswitch" aria-label="Toggle Theme">
             <i id="themeIcon" class="fa-solid fa-moon"></i>
