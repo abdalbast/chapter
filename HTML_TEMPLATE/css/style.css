@@ -1779,10 +1779,9 @@ body.lightmode .navbar-icon-wrapper {
   height: auto;
 }
 
-@media (min-width: 1200px) {
-  .site-logo {
-    max-width: 220px;
-  }
+.site-logo {
+  width: clamp(150px, 14vw, 200px);
+  height: auto;
 }
 
 .logo-container-footer {
@@ -5055,7 +5054,8 @@ body.lightmode .cta-service-banner::before {
     font-size: var(--font-size-7xl);
   }
   .logo-container img {
-    width: 60%;
+    width: auto;
+    max-width: 100%;
   }
   .logo-footer {
     max-width: 20%;
@@ -5313,7 +5313,8 @@ body.lightmode .cta-service-banner::before {
     width: 100%;
   }
   .logo-container img {
-    width: 80%;
+    width: auto;
+    max-width: 100%;
   }
   .logo-footer {
     max-width: 50%;
