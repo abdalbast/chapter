@@ -696,6 +696,21 @@ body.lightmode .form select {
   }
 }
 
+/* Ensure hamburger button sits at the far right on small screens
+   so the total space to the container edge matches the navbar's
+   30px right padding (mirrors logo side). */
+@media (max-width: 1199.98px) {
+  .nav-controls {
+    padding-right: 0; /* keep total right spacing at 30px from navbar */
+  }
+  .nav-btn {
+    order: 2; /* place hamburger after theme switch */
+  }
+  .themeswitch {
+    order: 1; /* move theme switch left of hamburger */
+  }
+}
+
 .nav-btn {
   display: none;
   padding: 8px 16px;
