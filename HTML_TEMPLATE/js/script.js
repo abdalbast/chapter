@@ -64,6 +64,34 @@ function initNavbarToggle() {
     setIcon(isShown);
     $toggler.toggleClass("active", isShown);
   });
+
+  // Close when clicking outside the navbar area
+  $(document).on("click", function (e) {
+    const $target = $(e.target);
+    const clickedInsideNavbar = $target.closest(".navbar").length > 0;
+    if (!clickedInsideNavbar && $collapse.hasClass("show")) {
+      const instance =
+        window.bootstrap && window.bootstrap.Collapse
+          ? window.bootstrap.Collapse.getOrCreateInstance($collapse[0])
+          : null;
+      if (instance) instance.hide();
+      setIcon(false);
+      $toggler.removeClass("active");
+    }
+  });
+
+  // Close on Escape key
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape" && $collapse.hasClass("show")) {
+      const instance =
+        window.bootstrap && window.bootstrap.Collapse
+          ? window.bootstrap.Collapse.getOrCreateInstance($collapse[0])
+          : null;
+      if (instance) instance.hide();
+      setIcon(false);
+      $toggler.removeClass("active");
+    }
+  });
 }
 
 function initBannerVideo() {
