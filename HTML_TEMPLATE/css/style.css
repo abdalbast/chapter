@@ -676,6 +676,7 @@ body.lightmode .form select {
   border: 1px solid var(--accent-color-3);
   background-color: var(--accent-color-4);
   border-radius: var(--global-border-radius);
+  overflow: visible; /* ensure child glows are not clipped by navbar */
 }
 
 .navbar-container {
@@ -744,9 +745,10 @@ body.lightmode .form select {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; /* allow CTA-like glow to render fully */
   flex: 1;
   margin: 0 auto;
+  gap: 8px; /* consistent spacing between tabs */
 }
 
 .navbar-collapse {
@@ -1150,7 +1152,7 @@ body.lightmode .keep-dark .btn-accent {
   display: inline-flex;
   align-items: center;
   border-radius: 100px;
-  padding: 15px 25px;
+  padding: 12px 22px; /* slightly reduced to prevent vertical clipping */
   background-color: var(--accent-color-4);
   box-shadow: var(--box-shadow-top-left);
   color: var(--primary);
