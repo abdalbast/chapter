@@ -3006,13 +3006,17 @@ body.lightmode .case-studies-content::before {
     var(--accent-color-3) 0%,
     var(--accent-color-4) 70%
   );
-  color: var(--accent-color);
+  color: var(--accent-color-2);
   box-shadow: var(--box-shadow-top-left);
   text-decoration: none;
   width: 80px;
   min-height: 80px;
   border-radius: var(--global-border-radius);
   font-size: var(--font-size-7xl);
+}
+
+.icon-box i {
+  color: inherit;
 }
 
 .icon-box:hover {
