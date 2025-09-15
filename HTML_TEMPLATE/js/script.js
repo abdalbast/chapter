@@ -284,50 +284,26 @@ function initNavLink() {
   });
 }
 
-// Keep nav to one row: move overflowed items into a More dropdown
+// Keep only core items on desktop; move extras into sidebar
 function initNavOverflow() {
   const $nav = $(".navbar-nav");
   if ($nav.length === 0) return;
 
-  let $more = $nav.children(".nav-item.more-dropdown");
-  if ($more.length === 0) {
-    $more = $(
-      '<li class="nav-item dropdown more-dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More <i class="fa-solid fa-angle-down accent-color"></i></a><ul class="dropdown-menu"></ul></li>',
-    );
-    $nav.append($more);
-  }
-  const $moreMenu = $more.find(".dropdown-menu");
+  const coreLabels = ["Home", "About Us", "Services", "Portfolio", "Testimonials", "Contact Us"];
 
   function layout() {
-    // Reset
-    $nav
-      .children("li")
-      .not($more)
-      .each(function () {
-        const $li = $(this);
-        if ($li.parent().is($moreMenu)) {
-          $more.before($li.detach());
-        }
-      });
-    $more.toggle(false);
+    const isMobile = window.matchMedia("(max-width: 1199px)").matches;
 
-    // Move overflowed items into More
-    const navRight = $nav[0].getBoundingClientRect().right - 8;
-    $nav
-      .children("li")
-      .not($more)
-      .each(function () {
-        const rect = this.getBoundingClientRect();
-        if (rect.right > navRight) {
-          $more.toggle(true);
-          $moreMenu.append($(this).detach());
-        }
-      });
+    // Always keep all items in collapse for mobile (handled by bootstrap collapse)
+    if (isMobile) return;
 
-    // Hide More if empty
-    if ($moreMenu.children().length === 0) {
-      $more.toggle(false);
-    }
+    // On desktop, hide non-core items from the navbar DOM (they remain accessible via sidebar/hamburger)
+    $nav.children("li").each(function () {
+      const $link = $(this).find("a.nav-link").first();
+      const label = $link.text().trim();
+      const isCore = coreLabels.includes(label);
+      $(this).toggle(isCore);
+    });
   }
 
   layout();
