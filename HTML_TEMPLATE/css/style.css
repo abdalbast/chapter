@@ -645,11 +645,35 @@ body.lightmode .form select {
 .nav-btn {
   display: none;
   padding: 8px 16px;
-  background-color: var(--accent-color);
+  background-color: transparent;
   color: var(--primary);
   box-shadow: none;
   transition: all 0.3s ease;
   order: 1;
+  border: 1px solid var(--accent-color);
+}
+
+.nav-btn i {
+  transition: transform 0.3s ease;
+}
+
+.nav-btn.active i {
+  transform: rotate(90deg);
+}
+
+.nav-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--primary);
+}
+
+.themeswitch:hover {
+  background-color: var(--accent-color);
+  color: var(--primary);
+}
+
+.icon-circle:hover {
+  background-color: var(--accent-color);
+  color: var(--primary);
 }
 .navbar-nav .nav-link:focus {
   color: var(--accent-color);
@@ -1083,7 +1107,8 @@ body.lightmode .keep-dark .btn-accent {
   width: 45px;
   padding: 0;
   border-radius: 50%;
-  background-color: var(--accent-color-4);
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3701,12 +3726,13 @@ body.lightmode .newsletter-layout {
 
 .icon-circle {
   position: relative;
-  background-color: var(--accent-color);
-  color: var(--primary);
+  background-color: transparent;
+  color: var(--accent-color);
   font-size: var(--font-size-6xl);
   width: 59px;
   height: 59px;
   border-radius: 50%;
+  border: 2px solid var(--accent-color);
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;

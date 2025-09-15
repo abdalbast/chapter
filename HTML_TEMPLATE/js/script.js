@@ -15,6 +15,7 @@ Promise.all([
     initBannerVideo();
     initNavLink();
     initNavOverflow();
+    initNavbarToggle();
     initSidebar();
     initEditSidebar();
     initSidebarDropdown();
@@ -342,6 +343,19 @@ function initSidebar() {
     setTimeout(() => {
       $overlay.removeClass("active");
     }, 200);
+  });
+}
+
+function initNavbarToggle() {
+  const $navbarToggler = $(".navbar-toggler");
+
+  $navbarToggler.on("click", function () {
+    $(this).toggleClass("active");
+  });
+
+  // Remove active class when collapse is hidden
+  $(".navbar-collapse").on("hidden.bs.collapse", function () {
+    $navbarToggler.removeClass("active");
   });
 }
 
