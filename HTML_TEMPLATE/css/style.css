@@ -1783,7 +1783,7 @@ body.lightmode .navbar-icon-wrapper {
 }
 
 .site-logo {
-  width: clamp(100px, 8vw, 130px);
+  width: clamp(90px, 6vw, 110px);
   height: auto;
 }
 
