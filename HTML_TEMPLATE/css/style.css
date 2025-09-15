@@ -3924,6 +3924,7 @@ body.lightmode .newsletter-layout {
   box-shadow: var(--box-shadow-top-left);
   text-decoration: none;
   font-size: var(--font-size-lg);
+  color: var(--accent-color-2);
 }
 
 /* 41.4 Social Container */
@@ -5619,5 +5620,42 @@ body.lightmode .cta-service-banner::before {
   .copyright,
   .legal-link {
     font-size: var(--font-size-xs);
+  }
+  .social-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8em;
+    max-width: 100%;
+  }
+  .social-item-wrapper {
+    min-height: 50px;
+    width: 50px;
+  }
+  .social-item {
+    width: 38px;
+    min-height: 38px;
+    font-size: 16px;
+  }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .social-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    max-width: 100%;
+  }
+  .social-item-wrapper {
+    min-height: 45px;
+    width: 45px;
+  }
+  .social-item {
+    width: 35px;
+    min-height: 35px;
+    font-size: 14px;
+  }
+  .footer-contact-container h5 {
+    text-align: center;
   }
 }
