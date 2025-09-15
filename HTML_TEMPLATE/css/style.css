@@ -672,27 +672,23 @@ body.lightmode .form select {
   display: flex;
   width: 100%;
   z-index: 3;
-  padding: 15px 30px;
+  padding: 1em;
   border: 1px solid var(--accent-color-3);
   background-color: var(--accent-color-4);
+  padding: 15px 30px 15px 30px;
   border-radius: var(--global-border-radius);
 }
 
 .navbar-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
 /* Match right padding of controls with left logo padding */
 .nav-controls {
-  margin-left: auto;
   margin-right: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 @media (min-width: 1200px) {
   .nav-controls {
@@ -726,7 +722,7 @@ body.lightmode .form select {
 }
 .navbar-nav .nav-link:focus {
   color: var(--accent-color);
-  background-color: transparent;
+  background-color: none;
 }
 
 .nav-link {
@@ -746,7 +742,7 @@ body.lightmode .form select {
 
 .navbar-collapse {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .nav-link:hover,
@@ -1776,16 +1772,8 @@ body.lightmode .navbar-icon-wrapper {
   padding-left: 0;
 }
 
-.site-logo {
-  max-width: 180px;
-  height: auto;
-  width: auto;
-}
-
 .logo-container img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
+  width: 40%;
 }
 
 .logo-container-footer {
@@ -4935,7 +4923,7 @@ body.lightmode .cta-service-banner::before {
     width: 100%;
   }
   .navbar-action-container {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .navbar-icon-wrapper {
     display: none;
@@ -4960,7 +4948,7 @@ body.lightmode .cta-service-banner::before {
     height: 53px;
   }
   .logo-container {
-    width: auto;
+    width: 50%;
   }
   .service-recent {
     width: 50%;
@@ -5058,8 +5046,7 @@ body.lightmode .cta-service-banner::before {
     font-size: var(--font-size-7xl);
   }
   .logo-container img {
-    width: auto;
-    max-width: 100%;
+    width: 60%;
   }
   .logo-footer {
     max-width: 20%;
@@ -5317,8 +5304,7 @@ body.lightmode .cta-service-banner::before {
     width: 100%;
   }
   .logo-container img {
-    width: auto;
-    max-width: 100%;
+    width: 80%;
   }
   .logo-footer {
     max-width: 50%;
