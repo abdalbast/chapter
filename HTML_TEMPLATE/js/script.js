@@ -284,30 +284,53 @@ function initNavLink() {
   });
 }
 
-// Keep only core items on desktop; move extras into sidebar
+// Keep nav to one row: move overflowed items into hamburger menu
 function initNavOverflow() {
   const $nav = $(".navbar-nav");
   if ($nav.length === 0) return;
 
-  const coreLabels = ["Home", "About Us", "Services", "Portfolio", "Testimonials", "Contact Us"];
+  const $collapse = $("#navbarNav");
+  const $container = $(".navbar-container");
 
   function layout() {
-    const isMobile = window.matchMedia("(max-width: 1199px)").matches;
+    // Reset all items to be visible
+    $nav.children("li").show();
 
-    // Always keep all items in collapse for mobile (handled by bootstrap collapse)
-    if (isMobile) return;
+    // Check if we're in mobile mode (bootstrap collapse handles this)
+    if ($collapse.hasClass("collapse") && window.innerWidth < 1200) {
+      return; // Let bootstrap handle mobile collapse
+    }
 
-    // On desktop, hide non-core items from the navbar DOM (they remain accessible via sidebar/hamburger)
-    $nav.children("li").each(function () {
-      const $link = $(this).find("a.nav-link").first();
-      const label = $link.text().trim();
-      const isCore = coreLabels.includes(label);
-      $(this).toggle(isCore);
+    // For desktop, check if items overflow
+    const containerWidth = $container.width();
+    const availableWidth = containerWidth - 200; // Reserve space for logo and controls
+
+    let totalWidth = 0;
+    const $visibleItems = $nav.children("li:visible");
+
+    // Calculate total width of visible items
+    $visibleItems.each(function () {
+      totalWidth += $(this).outerWidth(true);
     });
+
+    // If items overflow, hide them one by one until they fit
+    if (totalWidth > availableWidth) {
+      $visibleItems.each(function () {
+        totalWidth -= $(this).outerWidth(true);
+        $(this).hide();
+
+        if (totalWidth <= availableWidth) {
+          return false; // Break the loop
+        }
+      });
+    }
   }
 
   layout();
   $(window).on("resize", layout);
+
+  // Also trigger on navbar toggle events
+  $('[data-bs-toggle="collapse"]').on("shown.bs.collapse hidden.bs.collapse", layout);
 }
 
 $(function () {
