@@ -688,36 +688,26 @@ body.lightmode .form select {
 
 /* Match right padding of controls with left logo padding */
 .nav-controls {
-  margin-right: 0 !important; /* remove Bootstrap margin overrides */
-  padding-right: 0 !important; /* rely on navbar's 30px padding */
-  gap: 0 !important; /* remove internal gap between buttons */
+  margin-right: 0;
+  gap: 0 !important; /* remove bootstrap gap utility effect */
 }
-
-/* Ensure hamburger button sits at the far right on small screens
-   so the total space to the container edge matches the navbar's
-   30px right padding (mirrors logo side). */
-@media (max-width: 1199.98px) {
+@media (min-width: 1200px) {
   .nav-controls {
-    padding-right: 0; /* keep total right spacing at 30px from navbar */
-  }
-  .nav-btn {
-    order: 2; /* place hamburger after theme switch */
-  }
-  .themeswitch {
-    order: 1; /* move theme switch left of hamburger */
+    padding-right: 30px; /* exactly 30px to the container edge */
   }
 }
 
 .nav-btn {
   display: none;
-  padding: 8px 16px;
+  padding: 0; /* remove intrinsic padding */
+  width: 45px; /* match theme switch height for alignment */
+  height: 45px;
   background-color: transparent;
   color: var(--primary);
   box-shadow: none;
   transition: all 0.3s ease;
-  order: 2; /* ensure it sits to the right of theme switch */
+  order: 1;
   border: 1px solid var(--accent-color);
-  margin: 0; /* remove any Bootstrap default margins */
 }
 
 .nav-btn i {
@@ -1159,15 +1149,15 @@ body.lightmode .keep-dark .btn-accent {
 
 .themeswitch {
   height: 45px;
-  width: auto; /* auto width so it doesn’t force spacing */
-  padding: 0 12px; /* compact padding only */
+  width: auto; /* allow natural width */
+  min-width: 45px; /* preserve tap target */
+  padding: 0;
   border-radius: 50%;
   background-color: var(--accent-color-4);
   display: flex;
   justify-content: center;
   align-items: center;
-  order: 1;
-  margin: 0; /* remove default margins */
+  order: 2;
 }
 
 .themeswitch i {
@@ -1702,7 +1692,7 @@ body.lightmode .title-heading {
   gap: 0; /* remove action button gap */
   align-items: center;
   justify-content: flex-end;
-  padding: 0; /* no extra padding */
+  padding: 0; /* no extra padding; right spacing controlled by .nav-controls */
 }
 
 .navbar-icon-wrapper {
