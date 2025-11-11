@@ -481,13 +481,13 @@ $(document).ready(function () {
     {
       title: "Home",
       description:
-        "Amplify Your Brand with Cutting-Edge Digital Marketing Watch our video reviews and see how businesses achieve success with Marko's digital marketing solutions. Marko empowers businesses to grow online with data driven digital marketing, innovative branding, and performance focused strategies trusted by top brands lorem ipsum dolor sit amet consectetur. Get Started 2.7k Positive Reviews Ready [...]",
+        "Amplify Your Brand with Cutting-Edge Digital Marketing Watch our video reviews and see how businesses achieve success with Chapters Agency's digital marketing solutions. Chapters Agency empowers businesses to grow online with data driven digital marketing, innovative branding, and performance focused strategies trusted by top brands lorem ipsum dolor sit amet consectetur. Get Started 2.7k Positive Reviews Ready [...]",
       url: "index.html",
     },
     {
       title: "About",
       description:
-        "About Marko Home / About Us 0 + Years of Experience on Digital Marketing Services About Us Who We Are & What Drives Us At Marko, we specialize in crafting innovative digital marketing strategies that drive real business growth. Our expertise ensures your brand stays ahead in the competitive digital landscape. Get to know the [...]",
+        "About Chapters Agency Home / About Us 0 + Years of Experience on Digital Marketing Services About Us Who We Are & What Drives Us At Chapters Agency, we specialize in crafting innovative digital marketing strategies that drive real business growth. Our expertise ensures your brand stays ahead in the competitive digital landscape. Get to know the [...]",
       url: "about.html",
     },
     {
@@ -499,7 +499,7 @@ $(document).ready(function () {
     {
       title: "Single Services",
       description:
-        "Social Media Marketing Home / Services Details Our Expertise Boost Your Brand with Strategic Social Media Marketing Maximize engagement, build loyal communities, and drive conversions across all major platforms lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Service Overview At Marko, we help brands grow […]",
+        "Social Media Marketing Home / Services Details Our Expertise Boost Your Brand with Strategic Social Media Marketing Maximize engagement, build loyal communities, and drive conversions across all major platforms lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Service Overview At Chapters Agency, we help brands grow […]",
       url: "single_services.html",
     },
     {
@@ -517,7 +517,7 @@ $(document).ready(function () {
     {
       title: "Partnership",
       description:
-        "Partnership Home / Partnership Client & Partnership Strong Partnerships, Proven Success See How We Help Brands Grow Transform Your Business with Marko! Take your digital marketing to the next level with data-driven strategies and innovative solutions. Let's create something amazing together! 2.7k Positive Reviews 0 % Improved Project 0 % New Project Social Media Growth […]",
+        "Partnership Home / Partnership Client & Partnership Strong Partnerships, Proven Success See How We Help Brands Grow Transform Your Business with Chapters Agency! Take your digital marketing to the next level with data-driven strategies and innovative solutions. Let's create something amazing together! 2.7k Positive Reviews 0 % Improved Project 0 % New Project Social Media Growth […]",
       url: "partnership.html",
     },
     {
@@ -529,13 +529,13 @@ $(document).ready(function () {
     {
       title: "Testimonial",
       description:
-        "Testimonials Home / Testimonials 2.7k Positive Reviews 0 % Improved Project 0 % New Project Social Media Growth Performance Marketing What Our Client Says Hear from Our Satisfied Clients, Real Success Stories Discover how businesses like yours achieved outstanding growth with Marko's expert digital marketing solutions. Emma Richard CEO Nexatech 'Marko completely transformed our online [...]',",
+        "Testimonials Home / Testimonials 2.7k Positive Reviews 0 % Improved Project 0 % New Project Social Media Growth Performance Marketing What Our Client Says Hear from Our Satisfied Clients, Real Success Stories Discover how businesses like yours achieved outstanding growth with Chapters Agency's expert digital marketing solutions. Emma Richard CEO Nexatech 'Chapters Agency completely transformed our online [...]',",
       url: "testimonial.html",
     },
     {
       title: "FAQs",
       description:
-        "Simple, Direct, and Friendly Home / FAQ Frequently Asked Questions Got Questions? We've Got Answers. What services does Marko offer? We specialize in digital marketing, including branding, social media management, content strategy, paid ads, and analytics-driven campaigns. How long does it take to see results? While some channels like paid ads offer quicker results, most […]",
+        "Simple, Direct, and Friendly Home / FAQ Frequently Asked Questions Got Questions? We've Got Answers. What services does Chapters Agency offer? We specialize in digital marketing, including branding, social media management, content strategy, paid ads, and analytics-driven campaigns. How long does it take to see results? While some channels like paid ads offer quicker results, most […]",
       url: "faq.html",
     },
     {
@@ -553,13 +553,13 @@ $(document).ready(function () {
     {
       title: "Single Post",
       description:
-        "Growth Strategies for Digital Businesses Home / Single Post Recent Blog April 14, 2025 Mastering Instagram and Facebook Ads April 14, 2025 Growth Strategies for Digital Business Transform Your Business with Marko! Take your digital marketing to the next level with data-driven strategies and innovative solutions. Let's create something amazing together! Read More How to […]",
+        "Growth Strategies for Digital Businesses Home / Single Post Recent Blog April 14, 2025 Mastering Instagram and Facebook Ads April 14, 2025 Growth Strategies for Digital Business Transform Your Business with Chapters Agency! Take your digital marketing to the next level with data-driven strategies and innovative solutions. Let's create something amazing together! Read More How to […]",
       url: "single_post.html",
     },
     {
       title: "Contact Us",
       description:
-        "Contact Us Home / Contact Us Reach out to us Get in Touch Reach out to us for tailored digital solutions that drive results sollicitudin nec. Phone Number +1 (62) 987 7543 Email Address hello@markoagency.com Office Address Marko HQ - 902 Digital Lane, San Francisco, CA 94110, USA",
+        "Contact Us Home / Contact Us Reach out to us Get in Touch Reach out to us for tailored digital solutions that drive results sollicitudin nec. Phone Number +1 (62) 987 7543 Email Address hello@markoagency.com Office Address Chapters Agency HQ - 902 Digital Lane, San Francisco, CA 94110, USA",
       url: "contact.html",
     },
   ];
