@@ -6,6 +6,7 @@ These conventions are binding. Do not change the folder structure without updati
 
 - `HTML_TEMPLATE/` — Active source for pages, CSS, JS, images, and PHP form handlers.
 - `DOCUMENTATION/` — Demo and documentation assets; do not modify for production.
+- `docs/` — GitHub Pages deployment copy. Mirror of `HTML_TEMPLATE/` for static hosting. Do not edit directly; copy from `HTML_TEMPLATE/` when deploying updates.
 
 ## Authoring rules
 

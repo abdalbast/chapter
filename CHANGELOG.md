@@ -2,6 +2,45 @@
 
 This document tracks all changes made to prepare the Marko website template for development in Cursor AI.
 
+## GitHub Pages Deployment - v1.0.0-rebrand (Latest)
+
+### Deployment Configuration
+- **Created `/docs` folder** as GitHub Pages deployment directory
+- **Copied `HTML_TEMPLATE/` contents** to `/docs` for static hosting
+- **Configured GitHub Pages** to serve from `/docs` folder on `main` branch
+- **Live URL:** `https://abdalbast.github.io/chapter/`
+
+### Release Management
+- **Created release tag** `v1.0.0-rebrand` as restore point
+- **Annotated tag message:** "Re-branded Marko website - stable release for restoration"
+- **Purpose:** Easy rollback to pre-deployment state if needed
+
+### Documentation Updates
+- **Updated README.md** with:
+  - GitHub Pages deployment instructions
+  - Live website URL
+  - Deployment process workflow
+  - Traditional web hosting guidance for PHP forms
+  - Important notes about static-only hosting on GitHub Pages
+
+- **Updated structure.md** with:
+  - Documentation of `/docs` directory purpose
+  - Clarification that `/docs` is deployment copy only
+  - Instructions to continue development in `HTML_TEMPLATE/`
+
+### Deployment Workflow Established
+1. Develop in `HTML_TEMPLATE/` directory (active source)
+2. Copy updated files to `/docs` directory when ready to deploy
+3. Commit and push changes to `main` branch
+4. GitHub Pages automatically updates live site
+
+### Important Notes
+- **Static hosting only:** GitHub Pages serves static files; PHP forms require traditional hosting
+- **Dual deployment strategy:** GitHub Pages for previews, Hostinger/Namecheap for production with PHP
+- **Development source:** Always edit `HTML_TEMPLATE/`, never edit `/docs` directly
+
+---
+
 ## Overview
 The template has been organised and configured with modern development tooling, quality checks, and best practices while preserving the original design and structure.
 
